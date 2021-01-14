@@ -1,0 +1,11 @@
+<launch>
+	<node name="camera" pkg="cv_camera" type="cv_camera_node" />
+	<include file="$(find aruco_detect)/launch/aruco_detect.launch">
+		<arg name="camera" value="camera"/>
+		<arg name="image" value="image_raw"/>
+		<arg name="transport" value="compressed"/>
+		<arg name="fiducial_len" value="0.045"/>
+		<arg name="dictionary" value="10"/>
+		<arg name="do_pose_estimation" value="true"/>
+	</include>
+</launch>
